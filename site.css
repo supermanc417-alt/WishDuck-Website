@@ -435,7 +435,7 @@ h2 em {
 
 .paths {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
   margin-bottom: 112px;
 }
@@ -461,10 +461,11 @@ h2 em {
 .challenge-image {
   display: block;
   width: calc(100% + 52px);
-  height: 170px;
+  height: auto;
+  aspect-ratio: 1672 / 941;
   margin: 0 -26px 22px;
-  object-fit: cover;
-  object-position: center 36%;
+  object-fit: contain;
+  object-position: center;
   background: rgba(255, 255, 255, 0.04);
 }
 
@@ -492,6 +493,37 @@ h2 em {
   color: var(--muted);
   font-size: 14px;
   line-height: 1.6;
+}
+
+.challenge-more {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: -82px 0 88px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.challenge-more strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.challenge-more p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.challenge-more > span {
+  flex: 0 0 auto;
+  color: var(--yellow);
+  font-size: 22px;
+  letter-spacing: 0;
 }
 
 .final-band {
@@ -681,6 +713,7 @@ h2 em {
   .paths { grid-template-columns: 1fr; margin-bottom: 72px; }
   .grid { grid-template-columns: 1fr; }
   .path-card { min-height: 180px; }
+  .challenge-more { align-items: flex-start; flex-direction: column; margin: -42px 0 64px; }
   .final-band { flex-direction: column; align-items: flex-start; margin-bottom: 64px; padding: 32px 24px; }
   .final-band img { align-self: center; width: 140px; height: 140px; }
   .footer { padding-top: 38px; }
