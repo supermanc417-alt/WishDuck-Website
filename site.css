@@ -448,17 +448,31 @@ h2 em {
 
 .path-card {
   min-height: 220px;
-  padding: 26px;
+  padding: 0 26px 26px;
   border: 1px solid var(--line);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.035);
+}
+
+.challenge-card {
+  overflow: hidden;
+}
+
+.challenge-image {
+  display: block;
+  width: calc(100% + 52px);
+  height: 170px;
+  margin: 0 -26px 22px;
+  object-fit: cover;
+  object-position: center 36%;
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .path-icon {
   display: grid;
   width: 42px;
   height: 42px;
-  margin-bottom: 34px;
+  margin-bottom: 22px;
   place-items: center;
   border: 1px solid rgba(255, 212, 93, 0.24);
   border-radius: 12px;
