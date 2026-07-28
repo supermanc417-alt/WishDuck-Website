@@ -461,6 +461,7 @@ h2 em {
 .challenge-image {
   display: block;
   width: calc(100% + 52px);
+  max-width: none;
   height: auto;
   aspect-ratio: 1672 / 941;
   margin: 0 -26px 22px;
