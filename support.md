@@ -2,6 +2,12 @@
 
 如果你在使用心愿鸭时遇到问题，可以发送邮件到 support@wishduck.app。
 
+## 提交问题 / Ask A Question
+
+你也可以在支持页面填写问题主题和问题内容，点击发送后由设备上的邮件客户端发送到 support@wishduck.app。静态网站不会保存表单内容。
+
+You can also enter a question on the support page. Submitting it opens your device's mail client and sends the message to support@wishduck.app. The static website does not store form content.
+
 ## 反馈时请尽量包含
 
 - 设备型号和 iOS 版本；

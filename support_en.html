@@ -47,6 +47,22 @@
       </article>
 
       <article>
+        <h2>Ask A Question</h2>
+        <p>Fill in the form below to open your device's mail app. The form is not stored on the website.</p>
+        <form class="support-question" id="question-form">
+          <label for="question-subject">Subject</label>
+          <input id="question-subject" name="subject" type="text" placeholder="For example: How do I start a challenge pack?" required>
+          <label for="question-message">Question</label>
+          <textarea id="question-message" name="message" placeholder="Tell us what you would like to know" required></textarea>
+          <div class="button-row">
+            <button class="button" type="submit">Email Question</button>
+            <a class="button secondary" href="mailto:support@wishduck.app">Email Support Directly</a>
+          </div>
+          <p class="support-note" id="question-note">Your mail app will send the message. No information is collected on this page.</p>
+        </form>
+      </article>
+
+      <article>
         <h2>Frequently Asked Questions</h2>
         <h3>Does a child have to submit progress?</h3>
         <p>No. Parents can record completion directly, or let a child submit progress for parent review.</p>
@@ -67,5 +83,14 @@
     </div>
     <p class="copyright">© 2026 WishDuck</p>
   </footer>
+  <script>
+    document.querySelector("#question-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const subject = document.querySelector("#question-subject").value.trim();
+      const message = document.querySelector("#question-message").value.trim();
+      const body = message + "\\n\\nSent from WishDuck Support";
+      window.location.href = "mailto:support@wishduck.app?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    });
+  </script>
 </body>
 </html>

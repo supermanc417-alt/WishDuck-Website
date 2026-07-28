@@ -681,6 +681,54 @@ h2 em {
   color: #7f8995;
 }
 
+.support-question {
+  display: grid;
+  max-width: 680px;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.support-question label {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.support-question input,
+.support-question textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+  font: inherit;
+  font-size: 15px;
+  outline: none;
+}
+
+.support-question textarea {
+  min-height: 136px;
+  resize: vertical;
+}
+
+.support-question input:focus,
+.support-question textarea:focus {
+  border-color: rgba(255, 212, 93, 0.72);
+  box-shadow: 0 0 0 3px rgba(255, 212, 93, 0.12);
+}
+
+.support-question input::placeholder,
+.support-question textarea::placeholder {
+  color: var(--muted);
+}
+
+.support-note {
+  margin: 0 !important;
+  color: var(--muted) !important;
+  font-size: 13px !important;
+}
+
 .callout {
   padding-left: 22px !important;
   border-left: 3px solid var(--yellow) !important;
