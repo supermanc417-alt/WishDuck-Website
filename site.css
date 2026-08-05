@@ -36,6 +36,73 @@ body {
   letter-spacing: 0;
 }
 
+/* WishDuck letter presentation */
+.letter-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 76% 20%, rgba(255, 217, 117, .42) 0 3px, transparent 4px),
+    radial-gradient(circle at 16% 28%, rgba(255, 236, 165, .5) 0 2px, transparent 3px),
+    radial-gradient(circle at 86% 68%, rgba(255, 226, 126, .45) 0 2px, transparent 3px),
+    radial-gradient(ellipse at 72% 62%, rgba(255, 187, 91, .22), transparent 24%),
+    linear-gradient(145deg, #1a2a43 0%, #354d70 54%, #1b2b42 100%);
+  color: #283746;
+}
+
+.letter-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(17, 29, 47, .22), rgba(17, 29, 47, .68));
+}
+
+.letter-page .nav { background: rgba(16, 28, 43, .68); }
+.letter-page .nav-links a.active { color: var(--yellow); }
+.letter-stars { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .65; background-image: radial-gradient(circle at 16% 23%, #ffe9a2 0 2px, transparent 3px), radial-gradient(circle at 82% 19%, #ffe9a2 0 1px, transparent 3px), radial-gradient(circle at 73% 64%, #fff0bd 0 2px, transparent 3px); background-size: 260px 220px, 320px 260px, 380px 340px; }
+
+.letter-stage { min-height: calc(100vh - 64px); display: grid; place-items: center; position: relative; padding: 84px 24px 120px; }
+.letter-intro { position: absolute; top: 10%; left: max(24px, calc(50% - 540px)); color: #fffaf0; text-shadow: 0 2px 20px rgba(10, 20, 32, .35); }
+.letter-intro h1 { margin: 18px 0 12px; font-size: clamp(42px, 6vw, 72px); }
+.letter-intro p { color: #f5e9d1; font-size: 18px; }
+
+.envelope { position: relative; width: min(320px, 72vw); aspect-ratio: .72; margin-top: 120px; border: 0; border-radius: 12px; cursor: pointer; background: #f7e4bd; box-shadow: 0 34px 54px rgba(6, 15, 26, .35), inset 0 0 0 1px rgba(125, 74, 39, .18); transition: transform .55s var(--ease), filter .55s var(--ease); }
+.envelope:hover, .envelope:focus-visible { transform: translateY(-10px) rotate(-1deg); filter: brightness(1.04); outline: none; }
+.envelope::before, .envelope::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; }
+.envelope::before { background: linear-gradient(32deg, transparent 49.5%, rgba(166, 100, 52, .22) 50%, transparent 50.7%), linear-gradient(-32deg, transparent 49.5%, rgba(166, 100, 52, .18) 50%, transparent 50.7%); }
+.envelope::after { border: 1px solid rgba(117, 75, 42, .18); }
+.envelope-flap { position: absolute; inset: 0 0 auto; height: 61%; clip-path: polygon(0 0, 100% 0, 50% 100%); z-index: 2; border-radius: 12px 12px 0 0; background: #f9eacb; box-shadow: 0 2px 0 rgba(120, 74, 39, .12); transform-origin: top; transition: transform .8s var(--ease); }
+.envelope-paper { position: absolute; z-index: 3; top: 24%; left: 50%; color: #dcae4f; font-size: 42px; transform: translateX(-50%); }
+.envelope-seal { position: absolute; z-index: 4; left: 50%; top: 48%; display: grid; place-items: center; width: 58px; height: 58px; border-radius: 50%; color: #fff7df; background: #e79637; box-shadow: 0 4px 10px rgba(102, 55, 29, .2); font-size: 27px; transform: translate(-50%, -50%); }
+.envelope-label { position: absolute; z-index: 1; right: 22px; bottom: 22px; color: #9b653a; font: 700 14px/1.1 "SF Pro Rounded", sans-serif; text-align: right; letter-spacing: .04em; }
+.envelope-label small { font-size: 10px; font-weight: 500; }
+.letter-open .envelope { transform: translateY(18px) scale(.84); filter: brightness(.88); }
+.letter-open .envelope-flap { transform: rotateX(180deg); z-index: 0; }
+.letter-open .envelope-paper { opacity: 0; }
+
+.letter-paper { position: fixed; z-index: 10; top: 50%; left: 50%; width: min(680px, calc(100vw - 34px)); max-height: min(720px, calc(100vh - 38px)); overflow-y: auto; padding: clamp(30px, 5vw, 60px); border-radius: 7px; color: #3f3a35; background: #fff9e9; box-shadow: 0 28px 90px rgba(4, 12, 22, .5), inset 0 0 0 1px rgba(170, 127, 73, .22); opacity: 0; pointer-events: none; transform: translate(-50%, -45%) scale(.82) rotate(2deg); transition: opacity .45s var(--ease), transform .65s var(--ease); }
+.letter-paper::before { content: "✦  ·  ✦  ·  ✦"; position: absolute; inset: 14px; pointer-events: none; padding: 16px; border: 1px solid rgba(205, 164, 96, .35); color: rgba(205, 164, 96, .3); font-size: 13px; letter-spacing: 8px; }
+.letter-paper::after { content: "✦"; position: absolute; top: 36%; right: 13%; pointer-events: none; color: rgba(221, 173, 76, .1); font-size: 130px; transform: rotate(-12deg); }
+.letter-header { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; margin-bottom: 25px; color: #b77b42; }
+.postmark { display: grid; place-items: center; width: 62px; height: 62px; border: 1px solid rgba(183, 123, 66, .55); border-radius: 50%; color: #c98a48; font-size: 18px; line-height: .85; transform: rotate(-12deg); }
+.postmark small { display: block; margin-top: 3px; font-size: 7px; font-weight: 800; letter-spacing: .14em; text-align: center; }
+.letter-number { align-self: flex-start; padding-top: 9px; font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.letter-open .letter-paper { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1) rotate(0); }
+.letter-paper p, .letter-paper .letter-list { position: relative; font: 17px/1.9 "SF Pro Rounded", "PingFang SC", sans-serif; }
+.letter-kicker { color: #a36a34; font-weight: 800 !important; font-size: 23px !important; }
+.letter-list { padding-left: 20px; color: #7b5d3d; }
+.letter-signature { margin-top: 28px; color: #c17b35; font-weight: 800 !important; text-align: right; }
+.letter-footer { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 26px; color: #d5a355; }
+.letter-footer i { width: 44px; height: 1px; background: rgba(213, 163, 85, .45); }
+.close-letter { position: absolute; z-index: 2; top: 18px; right: 22px; width: 32px; height: 32px; border: 0; border-radius: 50%; color: #8b6a49; background: #f2dfb8; cursor: pointer; font-size: 24px; line-height: 1; }
+
+@media (max-width: 700px) {
+  .letter-intro { position: static; align-self: start; text-align: center; }
+  .letter-intro .badge { margin: 0 auto; }
+  .letter-stage { display: flex; flex-direction: column; justify-content: flex-start; gap: 4px; padding-top: 54px; }
+  .envelope { margin-top: 34px; }
+  .letter-paper p, .letter-paper .letter-list { font-size: 16px; line-height: 1.8; }
+}
+
 a {
   color: inherit;
   text-decoration: none;
