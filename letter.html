@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>来自星光邮局的一封信 · 心愿鸭 WishDuck</title>
+  <meta name="description" content="一封来自 WishDuck 的信，写给每一个正在慢慢长大的家庭。">
+  <link rel="stylesheet" href="site.css">
+  <link rel="icon" type="image/png" href="assets/wishduck-logo.png">
+</head>
+<body class="letter-page">
+  <div class="letter-stars" aria-hidden="true"></div>
+  <nav class="nav">
+    <a class="brand" href="index.html" aria-label="心愿鸭 WishDuck 首页"><img src="assets/wishduck-logo.png" alt=""><span>心愿鸭 WishDuck</span></a>
+    <div class="nav-links"><a href="index.html">首页</a><a href="gameplay.html">玩法细节</a><a href="letter.html" class="active">一封信</a><a href="support.html">支持</a></div>
+    <div class="lang-switch"><a href="letter.html" class="active">CN</a><a href="index_en.html">EN</a></div>
+  </nav>
+
+  <main class="letter-stage">
+    <div class="letter-intro">
+      <div class="badge">来自星光邮局的信</div>
+      <h1>有一封信，<br><em>写给正在长大的你</em></h1>
+      <p>小小的努力，也值得被认真看见。</p>
+    </div>
+    <button class="envelope" type="button" aria-expanded="false" aria-controls="letter-content">
+      <span class="envelope-flap"></span><span class="envelope-paper" aria-hidden="true">✦</span><span class="envelope-seal">🐥</span>
+      <span class="envelope-label">WishDuck<br><small>星光邮局</small></span>
+    </button>
+    <article id="letter-content" class="letter-paper" aria-hidden="true">
+      <button class="close-letter" type="button" aria-label="收起信件">×</button>
+      <div class="letter-header" aria-hidden="true">
+        <span class="postmark">✦<small>WISH<br>POST</small></span>
+        <span class="letter-number">星光邮局 · 第 01 号来信</span>
+      </div>
+      <p class="letter-kicker">写给每一个正在慢慢长大的家庭</p>
+      <p>亲爱的爸爸妈妈和小朋友：</p>
+      <p>每个孩子心里，都藏着一个小小的愿望。</p>
+      <p>它可能是一件期待已久的礼物，一次想去的旅行，也可能只是——想学会一件新事情，想变得更勇敢，想让爸爸妈妈为自己感到骄傲。</p>
+      <p>我是 WishDuck，来自星光邮局的一只小鸭子。</p>
+      <p>我的工作不是替你们实现愿望，而是陪你们发现，那些每天都值得被看见的努力：</p>
+      <p class="letter-list">主动收拾了一次玩具，<br>坚持完成了一件小事，<br>鼓起勇气尝试了新挑战，<br>帮助了家人，<br>或者在失败之后，愿意再试一次。</p>
+      <p>这些时刻看起来很小，却都在悄悄改变着孩子。</p>
+      <p>每一次行动，都会变成一颗星星。每一句认可，都会让星星更加明亮。当星星慢慢积累起来，愿望也就不再只是远方的想象，而变成了一条可以一步一步走近的路。</p>
+      <p>请记住，成长不需要每天都完美。</p>
+      <p>有时候可以走得快一点，有时候也可以停下来休息。重要的是，孩子知道自己的努力有人看见，家人知道陪伴本身就是一份礼物。</p>
+      <p>愿 WishDuck 陪你们收集每一个闪光的日常，把小小的进步，变成值得珍藏的回忆。</p>
+      <p>愿每一个愿望，都有星光相伴。</p>
+      <p class="letter-signature">你的 WishDuck 🐥✨</p>
+      <div class="letter-footer" aria-hidden="true"><span>★</span><i></i><span>★</span><i></i><span>★</span></div>
+    </article>
+  </main>
+  <script>
+    const envelope = document.querySelector('.envelope');
+    const paper = document.querySelector('.letter-paper');
+    const close = document.querySelector('.close-letter');
+    function toggleLetter(open) { document.body.classList.toggle('letter-open', open); envelope.setAttribute('aria-expanded', String(open)); paper.setAttribute('aria-hidden', String(!open)); }
+    envelope.addEventListener('click', () => toggleLetter(true));
+    close.addEventListener('click', () => toggleLetter(false));
+  </script>
+</body>
+</html>
